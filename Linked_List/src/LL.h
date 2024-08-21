@@ -4,7 +4,7 @@
 #ifndef LL_H
 #define LL_H
 
-typedef struct Node Node; 
+typedef struct Node Node;
 
 typedef struct LL {
   Node* head;
@@ -14,7 +14,7 @@ typedef struct LL {
 
 LL* new_LL();
 
-void delete_LL(LL* ll);
+void delete_LL(LL** ll);
 
 void LL_append(LL* ll, int data);
 
