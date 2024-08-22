@@ -12,11 +12,14 @@ typedef struct LL {
   size_t size;
 } LL;
 
-LL* new_LL();
+LL* new_list();
 
-void delete_LL(LL** ll);
+void delete_list(LL** ll);
 
-void LL_append(LL* ll, int data);
+void append(LL* ll, int data);
 
+void print_list(LL*ll);
+
+int len(LL*ll);
 
 #endif

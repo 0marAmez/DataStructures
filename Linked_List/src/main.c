@@ -2,8 +2,13 @@
 #include "LL.h"
 
 int main(void) {
-  LL* list = new_LL();
-  LL_append(list,48);
-  delete_LL(&list);
+  LL* list = new_list();
+  append(list,48);
+  append(list,49);
+  append(list,50);
+  append(list,51);
+  append(list,52);
+  print_list(list);
+  delete_list(&list);
   
 }

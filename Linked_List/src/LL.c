@@ -9,11 +9,11 @@ typedef struct Node{
 }Node;
 
 /**
- * @brief  Creates node.
+ * @brief  Creates a new node.
  * @param  data: Integer to be stored in node.
  * @return Pointer to a Node.
  */
-static Node* create_node(int data){
+static Node* creates_node(int data){
 
   Node* node = (Node*)malloc(sizeof(Node));
   node->data = data;
@@ -44,7 +44,7 @@ static void delete_node(Node** n){
  * @brief  Creates new Linked List.
  * @return new Linked List.
  */
-LL* new_LL(){
+LL* new_list(){
 
   LL* ll =  (LL*) malloc(sizeof(LL));
   ll->head =  NULL;
@@ -58,7 +58,7 @@ LL* new_LL(){
  * @brief  deletes Linked List
  * @param  ll:. ll is a pointer to the pointer of the linked list
  */
-void delete_LL(LL** ll){
+void delete_list(LL** ll){
 
 	//TODO: CHECK SIZE OF THE LINKED LIST BEFORE DELETING
 	if( ll != NULL && *ll != NULL ){
@@ -78,18 +78,38 @@ void delete_LL(LL** ll){
 
 }
 
-void LL_append(LL* ll, int data){
+/**
+ * @brief  append new node to the list
+ * @param  data: integer to be appended to the list
+ */
+void append(LL* ll, int data){
 	
-	Node* n = create_node(data);
+	Node* n = creates_node(data);
 	// if linked list is empty then we need both head and tail poiting t first node
 	if( ll->size == 0 ){
 		ll->head = n;
 		ll->tail = n;
 	}else{
+		// every time we append we need to reassign head
 		n->next = ll->head;
 		ll->head->prev = n;
 		ll->head = n;
 	}
+	// Increases the size of the linked list
 	ll->size++;
 
+}
+
+/**
+ * @brief  prints linked list
+ * @param  ll: List passed
+ */
+void print_list(LL*ll){
+
+	printf("[");
+	for(Node*temp = ll->head; temp != ll->tail; temp = temp->next){
+		printf("%d ",temp->data);
+	}
+	printf("%d",ll->tail->data);
+	printf("] \n");
 }
