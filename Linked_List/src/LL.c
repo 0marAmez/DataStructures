@@ -113,3 +113,33 @@ void print_list(LL*ll){
 	printf("%d",ll->tail->data);
 	printf("] \n");
 }
+
+/** 
+ *  @brief return the length of the list
+ *  @param ll: List 
+*/
+int len(LL*ll){
+
+	return ll->size;
+
+}
+
+/** 
+ *  @brief retrives the head of the list
+ *  @param ll: List 
+*/
+Node* front(LL*ll){
+
+	return ll->head;
+
+}
+
+/** 
+ *  @brief retrives the tail of the list
+ *  @param ll: List 
+*/
+Node* back(LL*ll){
+
+	return ll->tail;
+
+}

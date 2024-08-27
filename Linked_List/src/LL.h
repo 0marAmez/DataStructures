@@ -22,4 +22,9 @@ void print_list(LL*ll);
 
 int len(LL*ll);
 
+Node* front(LL*ll);
+
+Node* back(LL*ll);
+
+
 #endif

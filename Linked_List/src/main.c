@@ -9,6 +9,8 @@ int main(void) {
   append(list,51);
   append(list,52);
   print_list(list);
+  printf("List size %d\n",len(list));
+
   delete_list(&list);
   
 }
